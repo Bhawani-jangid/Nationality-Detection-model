@@ -7,11 +7,11 @@ from PIL import Image, ImageTk
 from tensorflow.keras.preprocessing.image import img_to_array
 
 # Load models and initialize face detector
-ethnicity_model_path = r'D:\project\Data Analysis\Nationality Detection model\models\ethnicity_detection_model.keras'
-emotion_model_path = r'D:\project\Data Analysis\Nationality Detection model\models\Emotion_model.keras'
-age_model_path = r'D:\project\Data Analysis\Nationality Detection model\models\age_gender_model.keras'
-color_model_path = r'D:\project\Data Analysis\Nationality Detection model\models\COLOR_detection_model.keras'
-cascade_path = r'D:\project\Data Analysis\Nationality Detection model\models\haarcascade_frontalface_default.xml'
+ethnicity_model_path = r'path_of_file\ethnicity_detection_model.keras'
+emotion_model_path = r'path_of_file\Emotion_model.keras'
+age_model_path = r'path_of_file\age_gender_model.keras'
+color_model_path = r'path_of_file\COLOR_detection_model.keras'
+cascade_path = r'path_of_file\haarcascade_frontalface_default.xml'
 
 # Age groups and ethnicity names
 age_groups = ['(0-2)', '(4-6)', '(8-12)', '(15-20)', '(25-32)', '(38-43)', '(48-53)', '(60-100)']
@@ -20,8 +20,8 @@ emotion_list = ["Angry", "Disgust", "Fear", "Happy", "Neutral", "Sad", "Surprise
 color_names = ['beige', 'black', 'blue', 'brown', 'gold', 'green', 'grey', 'orange', 'pink', 'purple', 'red', 'silver', 'tan', 'white', 'yellow']
 
 # Load pre-trained object detection model for detecting people
-net = cv2.dnn.readNetFromCaffe(r"D:\project\Data Analysis\car color detection\models\deploy.prototxt",
-                               r"D:\project\Data Analysis\car color detection\models\mobilenet_iter_73000.caffemodel")
+net = cv2.dnn.readNetFromCaffe(r"path_of_file\deploy.prototxt",
+                               r"path_of_file\mobilenet_iter_73000.caffemodel")
 
 # Function for detecting ethnicity
 def detect_ethnicity(file_path, model_path, cascade_path):
